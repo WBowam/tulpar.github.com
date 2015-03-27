@@ -6,8 +6,8 @@
         <meta name="author" content="tulpar" />
         <meta name="copyright" content="tulpar" />
 
-<meta name="keywords" content="Blog, Life, " />
-        <title>新博客主题  · Dreaming
+<meta name="keywords" content="Django, It, " />
+        <title>Django 使用邮件服务  · Dreaming
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -51,20 +51,37 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="/xin-bo-ke-zhu-ti.html"> 新博客主题  </a></h1>
+    <h1><a href="/django-shi-yong-you-jian-fu-wu.html"> Django 使用邮件服务  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>Assilammu Alaykum!</h3>
+            <p>我个人使用gmail的邮件服务器，不过经常会被墙，因此下面讲解使用qq邮箱服务器。</p>
+<hr />
+<h3>django settings.py</h3>
+<div class="highlight"><pre><span class="n">DEFAULT_FROM_EMAIL</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">49244564</span><span class="err">@</span><span class="n">qq</span><span class="p">.</span><span class="n">com</span><span class="err">&#39;</span>
+<span class="cp">#django 要求这里的“发送者”邮箱必须和超级管理员的邮箱一致，而且不能为空</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="n">True</span>
+<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">smtp</span><span class="p">.</span><span class="n">qq</span><span class="p">.</span><span class="n">com</span><span class="err">&#39;</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
+<span class="cp">##此处用的是SMTP的SSL加密方式，所以使用587或465端口号，不然可以用25端口。</span>
+<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="err">&#39;</span><span class="mi">49244564</span><span class="err">@</span><span class="n">qq</span><span class="p">.</span><span class="n">com</span><span class="err">&#39;</span>
+<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">wodeqqyouxiangmima</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<h3>开启qq邮箱SMTP服务</h3>
+<p>设置——账户——开启服务————打勾“POP3/SMTP服务和IMAP/SMTP服务“  </p>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-diff.html" title="Previous: Git Diff">Git Diff</a></li>
+                <li class="previous_article">« <a href="/init__fang-fa.html" title="Previous: init__()方法">init__()方法</a></li>
+ 
+                <li class="next_article"><a href="/django-fen-ye.html" title="Next: django 分页">django 分页</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -73,13 +90,13 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-25T00:00:00+08:00">Mar 25, 2015</time>
+            <time pubdate="pubdate" datetime="2014-07-07T00:00:00+08:00">Jul 7, 2014</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#Life-ref">Life</a> 
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#Blog-ref">Blog
-                    <span>1</span>
+                <li><a href="/tags.html#Django-ref">Django
+                    <span>22</span>
 </a></li>
             </ul>
 

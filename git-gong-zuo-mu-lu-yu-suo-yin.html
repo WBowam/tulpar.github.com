@@ -6,8 +6,8 @@
         <meta name="author" content="tulpar" />
         <meta name="copyright" content="tulpar" />
 
-<meta name="keywords" content="Blog, Life, " />
-        <title>新博客主题  · Dreaming
+<meta name="keywords" content="Git, It, " />
+        <title>Git 工作目录与索引  · Dreaming
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -51,20 +51,37 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="/xin-bo-ke-zhu-ti.html"> 新博客主题  </a></h1>
+    <h1><a href="/git-gong-zuo-mu-lu-yu-suo-yin.html"> Git 工作目录与索引  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>Assilammu Alaykum!</h3>
+            <h3>工作目录</h3>
+<p>你可以编辑工作目录的文件直到下次提交(commit)为止.</p>
+<h3>Git索引</h3>
+<ul>
+<li>Git索引是一个在你的工作目录和项目仓库间的暂存区(staging area). 　　</li>
+<li>有了它, 你可以把许多内容的修改一起提交(commit). 　　</li>
+<li>如果你创建了一个提交(commit), 那么提交的是当前索引(index)里的内容, 而不是工作目录中的内容.   </li>
+</ul>
+<h5><code>git status</code> 命令可以查看索引状态.</h5>
+<p>可以看到: 
+<em> 哪些文件被暂存了(就是在你的Git索引中), 　　　
+</em> 哪些文件被修改了但是没有暂存, 　　
+* 还有哪些文件没有被跟踪(untracked).
+<img alt="git_status" src="http://tulparblog.qiniudn.com/git_status.png" />    </p>
+<h3>图解</h3>
+<p><img alt="git图解" src="https://marklodato.github.io/visual-git-guide/basic-usage.svg" /></p>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-diff.html" title="Previous: Git Diff">Git Diff</a></li>
+                <li class="previous_article">« <a href="/git-pei-zhi.html" title="Previous: Git 配置">Git 配置</a></li>
+ 
+                <li class="next_article"><a href="/git-fen-zhi.html" title="Next: Git 分支">Git 分支</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -73,13 +90,13 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-25T00:00:00+08:00">Mar 25, 2015</time>
+            <time pubdate="pubdate" datetime="2015-02-10T00:00:00+08:00">Feb 10, 2015</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#Life-ref">Life</a> 
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#Blog-ref">Blog
-                    <span>1</span>
+                <li><a href="/tags.html#Git-ref">Git
+                    <span>11</span>
 </a></li>
             </ul>
 

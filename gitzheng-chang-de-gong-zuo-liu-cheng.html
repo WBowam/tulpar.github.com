@@ -6,8 +6,8 @@
         <meta name="author" content="tulpar" />
         <meta name="copyright" content="tulpar" />
 
-<meta name="keywords" content="Blog, Life, " />
-        <title>新博客主题  · Dreaming
+<meta name="keywords" content="Git, It, " />
+        <title>git正常的工作流程  · Dreaming
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -51,20 +51,40 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="/xin-bo-ke-zhu-ti.html"> 新博客主题  </a></h1>
+    <h1><a href="/gitzheng-chang-de-gong-zuo-liu-cheng.html"> git正常的工作流程  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>Assilammu Alaykum!</h3>
+            <h3>正常的工作流程</h3>
+<ol>
+<li>修改文件(在工作目录里) <ul>
+<li>这时可以用<code>git diff</code>来查看工作目录内还没加到索引的变动</li>
+</ul>
+</li>
+<li>将它们更新的内容添加到索引中 <code>git add file1 file2 file3</code>.   <ul>
+<li>这时可以用<code>git diff --cached</code>查看已经被加到索引的变动</li>
+</ul>
+</li>
+<li>提交到仓库  <code>git commit</code>   <br />
+注: <code>git commit -a</code>包括了<code>git add</code>和<code>git commit</code>．
+    自动把所有内容被修改的文件(不包括新创建的文件)都添加到索引中，并且同时把它们提交</li>
+</ol>
+<blockquote>
+<p>commit注释最好以一行短句子作为开头，来简要描述一下这次commit所作的修改(最好不要超过50个字符)；<br />
+然后空一行再把详细的注释写清楚。 <br />
+这样就可以很方便的用工具把commit注释变成email通知，第一行作为标题，剩下的部分就作email的正文.</p>
+</blockquote>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-diff.html" title="Previous: Git Diff">Git Diff</a></li>
+                <li class="previous_article">« <a href="/django-bulk_create.html" title="Previous: Django bulk_create">Django bulk_create</a></li>
+ 
+                <li class="next_article"><a href="/git-pei-zhi.html" title="Next: Git 配置">Git 配置</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -73,13 +93,13 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-25T00:00:00+08:00">Mar 25, 2015</time>
+            <time pubdate="pubdate" datetime="2015-02-10T00:00:00+08:00">Feb 10, 2015</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#Life-ref">Life</a> 
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#Blog-ref">Blog
-                    <span>1</span>
+                <li><a href="/tags.html#Git-ref">Git
+                    <span>11</span>
 </a></li>
             </ul>
 

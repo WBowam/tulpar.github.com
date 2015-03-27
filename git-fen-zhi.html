@@ -6,8 +6,8 @@
         <meta name="author" content="tulpar" />
         <meta name="copyright" content="tulpar" />
 
-<meta name="keywords" content="Blog, Life, " />
-        <title>新博客主题  · Dreaming
+<meta name="keywords" content="Git, It, " />
+        <title>Git 分支  · Dreaming
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -51,20 +51,54 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="/xin-bo-ke-zhu-ti.html"> 新博客主题  </a></h1>
+    <h1><a href="/git-fen-zhi.html"> Git 分支  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>Assilammu Alaykum!</h3>
+            <h3>分支</h3>
+<h4>＃ 新建分支</h4>
+<p><code>git branch branch-name</code></p>
+<h5>新建并切到该分支</h5>
+<p><code>git checkout -b branch-name</code></p>
+<h5>删除分支</h5>
+<p><code>$ git branch -d experimental</code></p>
+<h6>-d只能删除那些已经被当前分支的合并的分支.</h6>
+<h5>强制删除某个分支的话就用 –D</h5>
+<p><code>$ git branch -D crazy-idea</code>  </p>
+<h4>合并冲突</h4>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">merge</span> <span class="n">branch</span><span class="o">-</span><span class="n">name</span>
+ <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="n">done</span>
+<span class="n">Auto</span><span class="o">-</span><span class="n">merged</span> <span class="n">file</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">CONFLICT</span> <span class="p">(</span><span class="n">content</span><span class="p">)</span><span class="o">:</span> <span class="n">Merge</span> <span class="n">conflict</span> <span class="n">in</span> <span class="n">file</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">Automatic</span> <span class="n">merge</span> <span class="n">failed</span><span class="p">;</span> <span class="n">fix</span> <span class="n">conflicts</span> <span class="n">and</span> <span class="n">then</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">result</span><span class="p">.</span>
+</pre></div>
+
+
+<h5>解决合并中的冲突</h5>
+<p>有冲突(conflicts)的文件会保存在索引中，除非你解决了问题了并且更新了索引，否则执行 git commit都会失败:</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">commit</span>
+<span class="n">file</span><span class="p">.</span><span class="n">txt</span><span class="o">:</span> <span class="n">needs</span> <span class="n">merge</span>
+</pre></div>
+
+
+<h4>撒销一个合并</h4>
+<p>放弃修改撤回到本分支头部
+<code>git reset --hard HEAD</code>  <br />
+或
+<code>git checkout -f</code>  <br />
+撤回到之前的commit
+<code>git reset 4ba467213eb73480431b95c7dba03aac1c7a2c26</code></p>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-diff.html" title="Previous: Git Diff">Git Diff</a></li>
+                <li class="previous_article">« <a href="/git-gong-zuo-mu-lu-yu-suo-yin.html" title="Previous: Git 工作目录与索引">Git 工作目录与索引</a></li>
+ 
+                <li class="next_article"><a href="/git-diff.html" title="Next: Git Diff">Git Diff</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -73,13 +107,13 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-25T00:00:00+08:00">Mar 25, 2015</time>
+            <time pubdate="pubdate" datetime="2015-02-11T00:00:00+08:00">Feb 11, 2015</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#Life-ref">Life</a> 
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#Blog-ref">Blog
-                    <span>1</span>
+                <li><a href="/tags.html#Git-ref">Git
+                    <span>11</span>
 </a></li>
             </ul>
 

@@ -6,8 +6,8 @@
         <meta name="author" content="tulpar" />
         <meta name="copyright" content="tulpar" />
 
-<meta name="keywords" content="Blog, Life, " />
-        <title>新博客主题  · Dreaming
+<meta name="keywords" content="Ubuntu, Linux, It, " />
+        <title>Ubuntu 12.04中文输入法的安装  · Dreaming
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -51,20 +51,51 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="/xin-bo-ke-zhu-ti.html"> 新博客主题  </a></h1>
+    <h1><a href="/ubuntu-1204zhong-wen-shu-ru-fa-de-an-zhuang.html"> Ubuntu 12.04中文输入法的安装  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>Assilammu Alaykum!</h3>
+            <p>Ubuntu上的输入法主要有小小输入平台（支持拼音/二笔/五笔等），Fcitx，Ibus，Scim等。  <br />
+其中Scim和Ibus是输入法框架。  <br />
+在Ubuntu的中文系统中自带了中文输入法，通过Ctrl+Space可切换中英文输入法。  <br />
+假设我们装了Ubuntu英文系统，或系统自带输入法损坏，，，，，，，   </p>
+<hr />
+<h4>1.安装语言包</h4>
+<p>System Settings--&gt;Language Support--&gt;Install/Remove Languages<br />
+<img alt="Install /Remove Languages" src="http://tulparblog.qiniudn.com/ubuntu20120728104525690.png" /></p>
+<h4>2.安装并启动IBus框架</h4>
+<p>安装Ibus框架：</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ibus</span> <span class="n">ibus</span><span class="o">-</span><span class="n">clutter</span> <span class="n">ibus</span><span class="o">-</span><span class="n">gtk</span> <span class="n">ibus</span><span class="o">-</span><span class="n">gtk3</span> <span class="n">ibus</span><span class="o">-</span><span class="n">qt4</span>
+</pre></div>
+
+
+<p>启动IBus框架：
+<code>im-switch -s ibus</code>    <br />
+注销系统，保证更改立即生效。  </p>
+<h4>3.安装拼音引擎</h4>
+<p>有下面几种常用选择：  <br />
+IBus拼音：<code>sudo apt-get install ibus-pinyin</code> <br />
+IBUS五笔：<code>sudo apt-get install ibus-table-wubi</code>  <br />
+谷歌拼音输入法：<code>sudo apt-get install ibus-googlepinyin</code>  <br />
+Sun拼音输入法：<code>sudo apt-get install ibus-sunpinyin</code>      </p>
+<h4>4.设置IBus框架</h4>
+<p><code>ibus-setup</code>   <br />
+此时，IBus Preference设置被打开。我们在Input Method选项卡中，选择自己喜欢的输入方式，并配置自己喜欢的快捷键即可。如下图所示：<img alt="Input" src="http://tulparblog.qiniudn.com/ubuntu20120728104528231.png" /></p>
+<h4>5.如果Ibus的图标不在右上角显示，可以使用如下命令找回</h4>
+<p><code>ibus-daemon -drx</code></p>
+<hr />
+<p>Thats all</p>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-diff.html" title="Previous: Git Diff">Git Diff</a></li>
+                <li class="previous_article">« <a href="/hui-jia-lu.html" title="Previous: 回家路">回家路</a></li>
+ 
+                <li class="next_article"><a href="/related-field-has-invalid-lookup-icontains-jie-jue-fang-fa.html" title="Next: related Field has invalid lookup: icontains 解决方法">related Field has invalid lookup: icontains 解决方法</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -73,12 +104,15 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-25T00:00:00+08:00">Mar 25, 2015</time>
+            <time pubdate="pubdate" datetime="2014-08-21T00:00:00+08:00">Aug 21, 2014</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#Life-ref">Life</a> 
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#Blog-ref">Blog
+                <li><a href="/tags.html#Linux-ref">Linux
+                    <span>4</span>
+</a></li>
+                <li><a href="/tags.html#Ubuntu-ref">Ubuntu
                     <span>1</span>
 </a></li>
             </ul>

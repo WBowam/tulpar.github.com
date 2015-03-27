@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="tulpar" />
+        <meta name="copyright" content="tulpar" />
+
+<meta name="keywords" content="Django, It, " />
+        <title>django模板日期格式表  · Dreaming
+</title>
+        <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="/theme/images/apple-touch-icon-144x144.png" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>Dreaming</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="/djangomo-ban-ri-qi-ge-shi-biao.html"> django模板日期格式表  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <h5>使用示例:</h5>
+<p><code>{{ date_object|date:"Y-m-d,l" }}</code></p>
+<h6>输出:<code>2015年1月30日,周五</code></h6>
+<div class="highlight"><pre><span class="n">Format</span> <span class="n">Character</span>    <span class="n">Description</span> <span class="n">Example</span> <span class="n">Output</span>
+<span class="n">a</span>   <span class="err">&#39;</span><span class="n">a</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="err">&#39;</span> <span class="n">or</span> <span class="err">&#39;</span><span class="n">p</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="err">&#39;</span> <span class="p">.</span> <span class="p">(</span><span class="n">Note</span> <span class="n">that</span> <span class="n">this</span> <span class="n">is</span> <span class="n">slightly</span> <span class="n">different</span> <span class="n">from</span> <span class="n">PHPs</span> <span class="n">output</span><span class="p">,</span> <span class="n">because</span> <span class="n">this</span> <span class="n">includes</span> <span class="n">periods</span> <span class="n">to</span> <span class="n">match</span> <span class="n">Associated</span> <span class="n">Press</span> <span class="n">style</span><span class="p">.)</span>  <span class="err">&#39;</span><span class="n">a</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="err">&#39;</span>
+<span class="n">A</span>   <span class="err">&#39;</span><span class="n">AM</span><span class="err">&#39;</span> <span class="n">or</span> <span class="err">&#39;</span><span class="n">PM</span><span class="err">&#39;</span> <span class="p">.</span>  <span class="err">&#39;</span><span class="n">AM</span><span class="err">&#39;</span>
+<span class="n">b</span>   <span class="n">Month</span><span class="p">,</span> <span class="n">textual</span><span class="p">,</span> <span class="n">three</span> <span class="n">letters</span><span class="p">,</span> <span class="n">lowercase</span>    <span class="err">&#39;</span><span class="n">jan</span><span class="err">&#39;</span>
+<span class="n">d</span>   <span class="n">Day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span><span class="p">,</span> <span class="n">two</span> <span class="n">digits</span> <span class="n">with</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span>    <span class="err">&#39;</span><span class="mo">01</span><span class="err">&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">31</span><span class="err">&#39;</span>
+<span class="n">D</span>   <span class="n">Day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">,</span> <span class="n">textual</span><span class="p">,</span> <span class="n">three</span> <span class="n">letters</span><span class="p">.</span>    <span class="err">&#39;</span><span class="n">Fri</span><span class="err">&#39;</span>
+<span class="n">f</span>   <span class="n">Time</span><span class="p">,</span> <span class="n">in</span> <span class="mi">12</span><span class="o">-</span><span class="n">hour</span> <span class="n">hours</span> <span class="n">and</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">with</span> <span class="n">minutes</span> <span class="n">left</span> <span class="n">off</span> <span class="k">if</span> <span class="n">theyre</span> <span class="n">zero</span><span class="p">.</span>   <span class="sc">&#39;1&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="mi">1</span><span class="o">:</span><span class="mi">30</span><span class="err">&#39;</span>
+<span class="n">F</span>   <span class="n">Month</span><span class="p">,</span> <span class="n">textual</span><span class="p">,</span> <span class="kt">long</span><span class="p">.</span>   <span class="err">&#39;</span><span class="n">January</span><span class="err">&#39;</span>
+<span class="n">g</span>   <span class="n">Hour</span><span class="p">,</span> <span class="mi">12</span><span class="o">-</span><span class="n">hour</span> <span class="n">format</span> <span class="n">without</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span> <span class="sc">&#39;1&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">12</span><span class="err">&#39;</span>
+<span class="n">G</span>   <span class="n">Hour</span><span class="p">,</span> <span class="mi">24</span><span class="o">-</span><span class="n">hour</span> <span class="n">format</span> <span class="n">without</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span> <span class="sc">&#39;0&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">23</span><span class="err">&#39;</span>
+<span class="n">h</span>   <span class="n">Hour</span><span class="p">,</span> <span class="mi">12</span><span class="o">-</span><span class="n">hour</span> <span class="n">format</span><span class="p">.</span>   <span class="err">&#39;</span><span class="mo">01</span><span class="err">&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">12</span><span class="err">&#39;</span>
+<span class="n">H</span>   <span class="n">Hour</span><span class="p">,</span> <span class="mi">24</span><span class="o">-</span><span class="n">hour</span> <span class="n">format</span><span class="p">.</span>   <span class="err">&#39;</span><span class="mo">00</span><span class="err">&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">23</span><span class="err">&#39;</span>
+<span class="n">i</span>   <span class="n">Minutes</span><span class="p">.</span>    <span class="err">&#39;</span><span class="mo">00</span><span class="err">&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">59</span><span class="err">&#39;</span>
+<span class="n">j</span>   <span class="n">Day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span> <span class="n">without</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span> <span class="sc">&#39;1&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">31</span><span class="err">&#39;</span>
+<span class="n">l</span>   <span class="n">Day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">,</span> <span class="n">textual</span><span class="p">,</span> <span class="kt">long</span><span class="p">.</span> <span class="err">&#39;</span><span class="n">Friday</span><span class="err">&#39;</span>
+<span class="n">L</span>   <span class="n">Boolean</span> <span class="k">for</span> <span class="n">whether</span> <span class="n">its</span> <span class="n">a</span> <span class="n">leap</span> <span class="n">year</span><span class="p">.</span>    <span class="n">True</span> <span class="n">or</span> <span class="n">False</span>
+<span class="n">m</span>   <span class="n">Month</span><span class="p">,</span> <span class="n">two</span> <span class="n">digits</span> <span class="n">with</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span>   <span class="err">&#39;</span><span class="mo">01</span><span class="err">&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">12</span><span class="err">&#39;</span>
+<span class="n">M</span>   <span class="n">Month</span><span class="p">,</span> <span class="n">textual</span><span class="p">,</span> <span class="n">three</span> <span class="n">letters</span><span class="p">.</span>  <span class="err">&#39;</span><span class="n">Jan</span><span class="err">&#39;</span>
+<span class="n">n</span>   <span class="n">Month</span> <span class="n">without</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span>    <span class="sc">&#39;1&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">12</span><span class="err">&#39;</span>
+<span class="n">N</span>   <span class="n">Month</span> <span class="n">abbreviation</span> <span class="n">in</span> <span class="n">Associated</span> <span class="n">Press</span> <span class="n">style</span><span class="p">.</span>   <span class="err">&#39;</span><span class="n">Jan</span><span class="p">.</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">Feb</span><span class="p">.</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">March</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">May</span><span class="err">&#39;</span>
+<span class="n">O</span>   <span class="n">Difference</span> <span class="n">to</span> <span class="n">Greenwich</span> <span class="n">Mean</span> <span class="n">Time</span> <span class="n">in</span> <span class="n">hours</span><span class="p">.</span> <span class="err">&#39;</span><span class="o">+</span><span class="mo">0200</span><span class="err">&#39;</span>
+<span class="n">P</span>   <span class="n">Time</span><span class="p">,</span> <span class="n">in</span> <span class="mi">12</span><span class="o">-</span><span class="n">hour</span> <span class="n">hours</span><span class="p">,</span> <span class="n">minutes</span><span class="p">,</span> <span class="n">and</span> <span class="n">a</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="o">/</span><span class="n">p</span><span class="p">.</span><span class="n">m</span><span class="p">.,</span> <span class="n">with</span> <span class="n">minutes</span> <span class="n">left</span> <span class="n">off</span> <span class="k">if</span> <span class="n">theyre</span> <span class="n">zero</span> <span class="n">and</span> <span class="n">the</span> <span class="n">special</span><span class="o">-</span><span class="k">case</span> <span class="n">strings</span> <span class="err">&#39;</span><span class="n">midnight</span><span class="err">&#39;</span> <span class="n">and</span> <span class="err">&#39;</span><span class="n">noon</span><span class="err">&#39;</span> <span class="k">if</span> <span class="n">appropriate</span><span class="p">.</span> <span class="err">&#39;</span><span class="mi">1</span> <span class="n">a</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="mi">1</span>:<span class="mi">30</span> <span class="n">p</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">midnight</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">noon</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="mi">12</span><span class="o">:</span><span class="mi">30</span> <span class="n">p</span><span class="p">.</span><span class="n">m</span><span class="p">.</span><span class="err">&#39;</span>
+<span class="n">r</span>   <span class="n">RFC</span> <span class="mi">822</span> <span class="n">formatted</span> <span class="n">date</span><span class="p">.</span> <span class="err">&#39;</span><span class="n">Thu</span><span class="p">,</span> <span class="mi">21</span> <span class="n">Dec</span> <span class="mi">2000</span> <span class="mi">16</span><span class="o">:</span><span class="mo">01</span><span class="o">:</span><span class="mo">07</span> <span class="o">+</span><span class="mo">0200</span><span class="err">&#39;</span>
+<span class="n">s</span>   <span class="n">Seconds</span><span class="p">,</span> <span class="n">two</span> <span class="n">digits</span> <span class="n">with</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span> <span class="err">&#39;</span><span class="mo">00</span><span class="err">&#39;</span> <span class="n">to</span> <span class="err">&#39;</span><span class="mi">59</span><span class="err">&#39;</span>
+<span class="n">S</span>   <span class="n">English</span> <span class="n">ordinal</span> <span class="n">suffix</span> <span class="k">for</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span><span class="p">,</span> <span class="n">two</span> <span class="n">characters</span><span class="p">.</span>    <span class="err">&#39;</span><span class="n">st</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">nd</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">rd</span><span class="err">&#39;</span> <span class="n">or</span> <span class="err">&#39;</span><span class="n">th</span><span class="err">&#39;</span>
+<span class="n">t</span>   <span class="n">Number</span> <span class="n">of</span> <span class="n">days</span> <span class="n">in</span> <span class="n">the</span> <span class="n">given</span> <span class="n">month</span><span class="p">.</span>  <span class="mi">28</span> <span class="n">to</span> <span class="mi">31</span>
+<span class="n">T</span>   <span class="n">Time</span> <span class="n">zone</span> <span class="n">of</span> <span class="n">this</span> <span class="n">machine</span><span class="p">.</span>  <span class="err">&#39;</span><span class="n">EST</span><span class="err">&#39;</span> <span class="p">,</span> <span class="err">&#39;</span><span class="n">MDT</span><span class="err">&#39;</span>
+<span class="n">w</span>   <span class="n">Day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">,</span> <span class="n">digits</span> <span class="n">without</span> <span class="n">leading</span> <span class="n">zeros</span><span class="p">.</span>  <span class="sc">&#39;0&#39;</span> <span class="p">(</span><span class="n">Sunday</span><span class="p">)</span> <span class="n">to</span> <span class="sc">&#39;6&#39;</span> <span class="p">(</span><span class="n">Saturday</span><span class="p">)</span>
+<span class="n">W</span>   <span class="n">ISO</span><span class="o">-</span><span class="mi">8601</span> <span class="n">week</span> <span class="n">number</span> <span class="n">of</span> <span class="n">year</span><span class="p">,</span> <span class="n">with</span> <span class="n">weeks</span> <span class="n">starting</span> <span class="n">on</span> <span class="n">Monday</span><span class="p">.</span>    <span class="mi">1</span> <span class="p">,</span> <span class="mi">23</span>
+<span class="n">y</span>   <span class="n">Year</span><span class="p">,</span> <span class="n">two</span> <span class="n">digits</span><span class="p">.</span>   <span class="err">&#39;</span><span class="mi">99</span><span class="err">&#39;</span>
+<span class="n">Y</span>   <span class="n">Year</span><span class="p">,</span> <span class="n">four</span> <span class="n">digits</span><span class="p">.</span>  <span class="err">&#39;</span><span class="mi">1999</span><span class="err">&#39;</span>
+<span class="n">z</span>   <span class="n">Day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span><span class="p">.</span>    <span class="mi">0</span> <span class="n">to</span> <span class="mi">365</span>
+<span class="n">Z</span>   <span class="n">Time</span> <span class="n">zone</span> <span class="n">offset</span> <span class="n">in</span> <span class="n">seconds</span><span class="p">.</span> <span class="n">The</span> <span class="n">offset</span> <span class="k">for</span> <span class="n">time</span> <span class="n">zones</span> <span class="n">west</span> <span class="n">of</span> <span class="n">UTC</span> <span class="n">is</span> <span class="n">always</span> <span class="n">negative</span><span class="p">,</span> <span class="n">and</span> <span class="k">for</span> <span class="n">those</span> <span class="n">east</span> <span class="n">of</span> <span class="n">UTC</span> <span class="n">it</span> <span class="n">is</span> <span class="n">always</span> <span class="n">positive</span><span class="p">.</span>  
+</pre></div>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+                <li class="previous_article">« <a href="/shi-yong-css3-flexboxbu-ju.html" title="Previous: 使用CSS3 Flexbox布局">使用CSS3 Flexbox布局</a></li>
+ 
+                <li class="next_article"><a href="/chang-jian-de-liu-lan-qi-yin-qing-webkitgeckotrident.html" title="Next: 常见的浏览器引擎(WebKit,Gecko,Trident)">常见的浏览器引擎(WebKit,Gecko,Trident)</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2015-01-30T00:00:00+08:00">Jan 30, 2015</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#Django-ref">Django
+                    <span>22</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    </body>
+</html>

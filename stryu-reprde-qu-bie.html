@@ -6,8 +6,8 @@
         <meta name="author" content="tulpar" />
         <meta name="copyright" content="tulpar" />
 
-<meta name="keywords" content="Blog, Life, " />
-        <title>新博客主题  · Dreaming
+<meta name="keywords" content="Python, It, " />
+        <title>str()与repr()的区别  · Dreaming
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -51,20 +51,42 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="/xin-bo-ke-zhu-ti.html"> 新博客主题  </a></h1>
+    <h1><a href="/stryu-reprde-qu-bie.html"> str()与repr()的区别  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>Assilammu Alaykum!</h3>
+            <h5>一</h5>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">word</span><span class="o">=</span><span class="s">&quot;hello</span><span class="se">\t</span><span class="s"> world!</span><span class="se">\n</span><span class="s">hello motto!&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">str</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="n">hello</span><span class="err">\</span><span class="n">t</span> <span class="n">world</span><span class="o">!</span><span class="err">\</span><span class="n">nhello</span> <span class="n">motto</span><span class="o">!</span><span class="err">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">repr</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="s">&quot;&#39;hello</span><span class="se">\\</span><span class="s">t world!</span><span class="se">\\</span><span class="s">nhello motto!&#39;&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">print</span> <span class="n">str</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">hello</span>    <span class="n">world</span><span class="o">!</span>
+<span class="n">hello</span> <span class="n">motto</span><span class="o">!</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">print</span> <span class="n">repr</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="n">hello</span><span class="err">\</span><span class="n">t</span> <span class="n">world</span><span class="o">!</span><span class="err">\</span><span class="n">nhello</span> <span class="n">motto</span><span class="o">!</span><span class="err">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h5>二</h5>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">str</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="mf">0.1</span><span class="err">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">repr</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="mf">0.10000000000000001</span><span class="err">&#39;</span>
+</pre></div>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-diff.html" title="Previous: Git Diff">Git Diff</a></li>
+                <li class="previous_article">« <a href="/mysqlyu-ju-ru-men-1.html" title="Previous: Mysql语句入门（1）">Mysql语句入门（1）</a></li>
+ 
+                <li class="next_article"><a href="/python-exeche-evalyu-ju.html" title="Next: python exec和eval语句">python exec和eval语句</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -73,13 +95,13 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-03-25T00:00:00+08:00">Mar 25, 2015</time>
+            <time pubdate="pubdate" datetime="2014-07-01T00:00:00+08:00">Jul 1, 2014</time>
             <h4>Category</h4>
-            <a class="category-link" href="/categories.html#Life-ref">Life</a> 
+            <a class="category-link" href="/categories.html#It-ref">It</a> 
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#Blog-ref">Blog
-                    <span>1</span>
+                <li><a href="/tags.html#Python-ref">Python
+                    <span>11</span>
 </a></li>
             </ul>
 
