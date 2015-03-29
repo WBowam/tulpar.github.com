@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dreaming</title><link>/</link><description></description><atom:link href="/feeds/tulpar.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 29 Mar 2015 00:00:00 +0800</lastBuildDate><item><title>git 复习巩固(1)</title><link>/git-fu-xi-gong-gu-1.html</link><description>&lt;h4&gt;1. Working Directory（工作目录）&lt;/h4&gt;
-&lt;p&gt;Git的工作目录是保存当前正在工作的文件所在的目录，和working tree是相同的意思。在这个目录中的文件可能会在切换branch时被GIT删除或者替换。这个目录是个临时目录，临时存储你从GIT库中取出的文件，这些文件一直会被保存，直到下次提交。 &lt;/p&gt;
-&lt;h4&gt;2.Git索引&lt;/h4&gt;
-&lt;p&gt;Git索引是一个在你的工作目录和项目仓库间的暂存区(staging area). 有了它, 你可以把许多内容的修改一起提交(commit). 如果你创建了一个提交(commit), 那么提交的是当前索引(index)里的内容, 而不是工作目录中的内容.&lt;/p&gt;
-&lt;h4&gt;3. 仓库&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-1.html</guid><category>git</category></item><item><title>git 复习巩固(1)</title><link>/git-fu-xi-gong-gu-1.html</link><description>&lt;h4&gt;1. git工作流&lt;/h4&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dreaming</title><link>/</link><description></description><atom:link href="/feeds/tulpar.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 29 Mar 2015 00:00:00 +0800</lastBuildDate><item><title>git 复习巩固(1)</title><link>/git-fu-xi-gong-gu-1.html</link><description>&lt;h4&gt;1. git工作流&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。&lt;img alt="git_tree" src="http://tulparblog.qiniudn.com/trees.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -70,4 +66,8 @@
 &lt;li&gt;最后有一个 commit对象 来指向根tree对象(root of trees), &lt;/li&gt;
 &lt;li&gt;这样我们就可以追踪项目每一项提交内容.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="http://gitbook.liuhui998.com/1_2.html"&gt;看到&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-2.html</guid><category>git</category></item></channel></rss>
+&lt;p&gt;&lt;a href="http://gitbook.liuhui998.com/1_2.html"&gt;看到&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-2.html</guid><category>git</category></item><item><title>git 复习巩固(3)</title><link>/git-fu-xi-gong-gu-3.html</link><description>&lt;h4&gt;1. Working Directory（工作目录）&lt;/h4&gt;
+&lt;p&gt;Git的工作目录是保存当前正在工作的文件所在的目录，和working tree是相同的意思。在这个目录中的文件可能会在切换branch时被GIT删除或者替换。这个目录是个临时目录，临时存储你从GIT库中取出的文件，这些文件一直会被保存，直到下次提交。 &lt;/p&gt;
+&lt;h4&gt;2.Git索引&lt;/h4&gt;
+&lt;p&gt;Git索引是一个在你的工作目录和项目仓库间的暂存区(staging area). 有了它, 你可以把许多内容的修改一起提交(commit). 如果你创建了一个提交(commit), 那么提交的是当前索引(index)里的内容, 而不是工作目录中的内容.&lt;/p&gt;
+&lt;h4&gt;3. 仓库&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-3.html</guid><category>git</category></item></channel></rss>

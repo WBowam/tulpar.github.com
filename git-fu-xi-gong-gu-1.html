@@ -58,25 +58,28 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h4>1. Working Directory（工作目录）</h4>
-<p>Git的工作目录是保存当前正在工作的文件所在的目录，和working tree是相同的意思。在这个目录中的文件可能会在切换branch时被GIT删除或者替换。这个目录是个临时目录，临时存储你从GIT库中取出的文件，这些文件一直会被保存，直到下次提交。 </p>
-<h4>2.Git索引</h4>
-<p>Git索引是一个在你的工作目录和项目仓库间的暂存区(staging area). 有了它, 你可以把许多内容的修改一起提交(commit). 如果你创建了一个提交(commit), 那么提交的是当前索引(index)里的内容, 而不是工作目录中的内容.</p>
-<h4>3. 仓库</h4>
+            <h4>1. git工作流</h4>
+<blockquote>
+<p>你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。<img alt="git_tree" src="http://tulparblog.qiniudn.com/trees.png" /></p>
+</blockquote>
+<h4>2. 本地仓库连接到远程仓库</h4>
+<p><code>git remote add origin &lt;server&gt;</code> <br />
+如:</p>
+<div class="highlight"><pre><span class="cp">## 我的本地文件加到我的博客</span>
+<span class="n">cd</span> <span class="n">output</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">init</span> 
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/tulpar008/blog.git</span>
+<span class="n">git</span> <span class="n">pull</span> 
+<span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;for test&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
             <aside>
             <hr/>
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="/git-fu-xi-gong-gu-1.html" title="Previous: git 复习巩固(1)">git 复习巩固(1)</a></li>
-            </ul>
-            </nav>
-            <nav>
-            <ul class="articles_timeline">
- 
                 <li class="previous_article">« <a href="/git-fu-xi-gong-gu-2.html" title="Previous: git 复习巩固(2)">git 复习巩固(2)</a></li>
- 
-                <li class="next_article"><a href="/git-fu-xi-gong-gu-1.html" title="Next: git 复习巩固(1)">git 复习巩固(1)</a> »</li>
             </ul>
             </nav>
             </aside>
