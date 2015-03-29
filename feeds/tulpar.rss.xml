@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dreaming</title><link>/</link><description></description><atom:link href="/feeds/tulpar.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 29 Mar 2015 00:00:00 +0800</lastBuildDate><item><title>git 复习巩固(1)</title><link>/git-fu-xi-gong-gu-1.html</link><description>&lt;h4&gt;1. git工作流&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。&lt;img alt="git_tree" src="http://tulparblog.qiniudn.com/trees.png" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;2. 本地仓库连接到远程仓库&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git remote add origin &amp;lt;server&amp;gt;&lt;/code&gt; &lt;br /&gt;
+如:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;## 我的本地文件加到我的博客&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; 
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;remote&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/tulpar008/blog.git&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;pull&lt;/span&gt; 
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;for test&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-1.html</guid><category>git</category></item><item><title>git 复习巩固(2)</title><link>/git-fu-xi-gong-gu-2.html</link><description>&lt;h4&gt;1. 对象名&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;6ff87c4664981e4397625791c8ea3bbb5f2279a3&lt;/code&gt;  &lt;br /&gt;
+&lt;em&gt; 所有用来表示项目历史信息的文件,是通过一个40个字符的（40-digit）“对象名”来索引的.&lt;br /&gt;
+&lt;/em&gt; 每一个“对象名”都是对“对象”内容做SHA1哈希计算得来的，（SHA1是一种密码学的哈希算法）。这样就意味着两个不同内容的对象不可能有相同的“对象名”。&lt;/p&gt;
+&lt;h4&gt;2. 对象&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;有四种类型的对象："blob"、"tree"、 "commit" 和"tag"   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3. Blob 对象&lt;/h4&gt;
+&lt;p&gt;新文件纳入到 Git 后会被五马分尸，它的内容被扔到在一个 blob 对象中，它的对象名是基于内容运算生成的一个 40个字符的 SHA1值。&lt;/p&gt;
+&lt;p&gt;blob 没有文件名，只有内容。   &lt;/p&gt;
+&lt;p&gt;&lt;img alt="blob" src="http://mednoter.com/media/files/2014/jul/29-object-blob.png" /&gt;&lt;/p&gt;
+&lt;h4&gt;4. Tree 对象&lt;/h4&gt;
+&lt;p&gt;一个 tree 对象就是一大坨指针，指向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;其他 small tree（子级 tree）&lt;/li&gt;
+&lt;li&gt;blob
+可以把 Tree 对象想象为 Linux 文件系统中的目录，记录了子目录的信息、文件信息。   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="tree" src="http://mednoter.com/media/files/2014/jul/29-object-tree.png" /&gt;&lt;/p&gt;
+&lt;h4&gt;5. Commit 对象&lt;/h4&gt;
+&lt;p&gt;一个 commit 对象由以下几部分组成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作者&lt;/li&gt;
+&lt;li&gt;提交者&lt;/li&gt;
+&lt;li&gt;注释&lt;/li&gt;
+&lt;li&gt;指向一个 big tree 的指针   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="commit" src="http://mednoter.com/media/files/2014/jul/29-object-commit.png" /&gt;&lt;/p&gt;
+&lt;h3&gt;6. 我们已经了解了3种主要对象类型(blob, tree 和 commit), 让我们大概了解一下它们怎么组合到一起的&lt;/h3&gt;
+&lt;p&gt;如果我们一个小项目, 有如下的目录结构:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;tree&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;|--&lt;/span&gt; &lt;span class="n"&gt;README&lt;/span&gt;
+&lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="n"&gt;lib&lt;/span&gt;
+    &lt;span class="o"&gt;|--&lt;/span&gt; &lt;span class="n"&gt;inc&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt;   &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="n"&gt;tricks&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rb&lt;/span&gt;
+    &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="n"&gt;mylib&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rb&lt;/span&gt;
+
+&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;directories&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果我们把它提交(commit)到一个Git仓库中, 在Git中它们也许看起来就如下图:    &lt;/p&gt;
+&lt;p&gt;&lt;img alt="示例" src="http://gitbook.liuhui998.com/assets/images/figure/objects-example.png" /&gt;&lt;/p&gt;
+&lt;h5&gt;可以看到:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;每个目录都创建了 tree对象 (包括根目录), &lt;/li&gt;
+&lt;li&gt;每个文件都创建了一个对应的 blob对象 . &lt;/li&gt;
+&lt;li&gt;最后有一个 commit对象 来指向根tree对象(root of trees), &lt;/li&gt;
+&lt;li&gt;这样我们就可以追踪项目每一项提交内容.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://gitbook.liuhui998.com/1_2.html"&gt;看到&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-2.html</guid><category>git</category></item></channel></rss>
