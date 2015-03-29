@@ -70,4 +70,38 @@
 &lt;p&gt;Git的工作目录是保存当前正在工作的文件所在的目录，和working tree是相同的意思。在这个目录中的文件可能会在切换branch时被GIT删除或者替换。这个目录是个临时目录，临时存储你从GIT库中取出的文件，这些文件一直会被保存，直到下次提交。 &lt;/p&gt;
 &lt;h4&gt;2.Git索引&lt;/h4&gt;
 &lt;p&gt;Git索引是一个在你的工作目录和项目仓库间的暂存区(staging area). 有了它, 你可以把许多内容的修改一起提交(commit). 如果你创建了一个提交(commit), 那么提交的是当前索引(index)里的内容, 而不是工作目录中的内容.&lt;/p&gt;
-&lt;h4&gt;3. 仓库&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-3.html</guid><category>git</category></item></channel></rss>
+&lt;h4&gt;3. 仓库&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-3.html</guid><category>git</category></item><item><title>git 复习巩固(4)</title><link>/git-fu-xi-gong-gu-4.html</link><description>&lt;h3&gt;分支&lt;/h3&gt;
+&lt;h4&gt;＃ 新建分支&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git branch branch-name&lt;/code&gt;&lt;/p&gt;
+&lt;h5&gt;新建并切到该分支&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;git checkout -b branch-name&lt;/code&gt;&lt;/p&gt;
+&lt;h5&gt;删除分支&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;$ git branch -d experimental&lt;/code&gt;&lt;/p&gt;
+&lt;h6&gt;-d只能删除那些已经被当前分支的合并的分支.&lt;/h6&gt;
+&lt;h5&gt;强制删除某个分支的话就用 –D&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;$ git branch -D crazy-idea&lt;/code&gt;  &lt;/p&gt;
+&lt;h4&gt;合并冲突&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;merge&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
+ &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
+&lt;span class="n"&gt;Auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="n"&gt;CONFLICT&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Merge&lt;/span&gt; &lt;span class="n"&gt;conflict&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="n"&gt;Automatic&lt;/span&gt; &lt;span class="n"&gt;merge&lt;/span&gt; &lt;span class="n"&gt;failed&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;fix&lt;/span&gt; &lt;span class="n"&gt;conflicts&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;then&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;解决合并中的冲突&lt;/h5&gt;
+&lt;p&gt;有冲突(conflicts)的文件会保存在索引中，除非你解决了问题了并且更新了索引，否则执行 git commit都会失败:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt;
+&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;needs&lt;/span&gt; &lt;span class="n"&gt;merge&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;撒销一个合并&lt;/h4&gt;
+&lt;p&gt;放弃修改撤回到本分支头部
+&lt;code&gt;git reset --hard HEAD&lt;/code&gt;  &lt;br /&gt;
+或
+&lt;code&gt;git checkout -f&lt;/code&gt;  &lt;br /&gt;
+撤回到之前的commit
+&lt;code&gt;git reset 4ba467213eb73480431b95c7dba03aac1c7a2c26&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-4.html</guid><category>git</category></item><item><title>git 复习巩固(５)</title><link>/git-fu-xi-gong-gu-5.html</link><description>&lt;h4&gt;fetch all git branches&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git fetch --all&lt;/code&gt;&lt;/p&gt;
+&lt;h6&gt;但是&lt;code&gt;git branch&lt;/code&gt;不会显示信拉下来的分支列表，直接checkout就行&lt;/h6&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">tulpar</dc:creator><pubDate>Sun, 29 Mar 2015 00:00:00 +0800</pubDate><guid>tag:,2015-03-29:git-fu-xi-gong-gu-5.html</guid><category>git</category></item></channel></rss>
